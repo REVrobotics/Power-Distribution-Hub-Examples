@@ -4,14 +4,13 @@
 
 #pragma once
 
-#include <string>
-
-#include <frc/TimedRobot.h>
-#include <frc/smartdashboard/SendableChooser.h>
 #include <frc/PowerDistribution.h>
+#include <frc/TimedRobot.h>
+
+#define PDH_CAN_ID 1
 
 class Robot : public frc::TimedRobot {
- public:
+public:
   void RobotInit() override;
   void RobotPeriodic() override;
   void AutonomousInit() override;
@@ -23,10 +22,7 @@ class Robot : public frc::TimedRobot {
   void TestInit() override;
   void TestPeriodic() override;
 
- private:
-  frc::PowerDistribution hub{1,frc::PowerDistribution::ModuleType::kRev};
-  frc::SendableChooser<std::string> m_chooser;
-  const std::string kAutoNameDefault = "Default";
-  const std::string kAutoNameCustom = "My Auto";
-  std::string m_autoSelected;
+private:
+  frc::PowerDistribution m_pdh{PDH_CAN_ID,
+                               frc::PowerDistribution::ModuleType::kRev};
 };
