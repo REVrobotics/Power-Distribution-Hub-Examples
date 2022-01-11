@@ -14,4 +14,4 @@ Steps:
 
 1. Deploy the code to your roboRIO with the PDH connected.
 2. Open _Periodic Tasks.vi_, you should see the faults displayed on the front panel.
-3. Click the `Clear Sticky Faults` button on Shuffleboard to clear sticky faults on the PDH.
+3. Click the `Clear Sticky Faults` button on the front panel to clear sticky faults on the PDH.
